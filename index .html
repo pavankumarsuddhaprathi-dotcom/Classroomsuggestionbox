@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Classroom Suggestion Box</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="box">
+
+  <h1>Classroom Suggestion Box</h1>
+
+  <!-- Student Form -->
+  <label>Student ID</label>
+  <input type="text" id="id" onkeydown="moveNext(event,'name')">
+
+  <label>Student Name</label>
+  <input type="text" id="name" onkeydown="moveNext(event,'classSection')">
+
+  <label>Class & Section</label>
+  <input type="text" id="classSection" onkeydown="moveNext(event,'category')">
+
+  <label>Category</label>
+  <select id="category" onkeydown="moveNext(event,'suggestion')">
+    <option>Academic</option>
+    <option>Infrastructure</option>
+    <option>Faculty</option>
+    <option>Examination</option>
+    <option>Others</option>
+  </select>
+
+  <label>Suggestion</label>
+  <textarea id="suggestion"></textarea>
+
+  <button type="button" onclick="submitSuggestion()">Submit Suggestion</button>
+  <p id="msg"></p>
+
+  <hr>
+
+  <!-- Admin Login -->
+  <button type="button" onclick="adminLogin()">Admin Login</button>
+
+  <!-- Export button (shown only after admin login) -->
+  <button id="exportBtn" type="button" onclick="exportSuggestions()" style="display:none;">
+    Export Suggestions (CSV)
+  </button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
